@@ -248,6 +248,8 @@ The first three Harry potter movies *Sorcerer's stone*, *Chamber of the secrets*
  arrange(desc(budget)) 
 print (movies101$budget)
 ```
+The highest budget for the movie is $ 170000000.
+
 
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
