@@ -237,6 +237,8 @@ Harry_Potter %>% arrange(desc(votes))
 
 ```
 
+The first three Harry potter movies *Sorcerer's stone*, *Chamber of the secrets*, and *prisoner of azkaban*. The highest rating is *Prisoner Azkaban* 
+
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
