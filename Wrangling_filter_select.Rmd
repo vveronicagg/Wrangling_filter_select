@@ -1,7 +1,7 @@
 ---
 title: "Data Wrangling - Part I"
 subtitle: "StatPREP R Workshops"
-author: "Your Name"
+author: "veronica gonzalez"
 output: html_document
 ---
 
@@ -202,25 +202,48 @@ See if you can answer these questions:
 1. How many movies were released in 1995?
 
 ```{r}
-
+mov1995 <- movies %>%
+filter(year==1995)
+mov1995
 ```
+
+There were 1,248 movies released in 1995.  
 
 2. Which Comedies with an MPAA rating, over 120 minutes have a rating above 8?
 
 ```{r}
-
+movies_2000 <- movies %>%
+filter (length > 120) %>%
+filter (Comedy == 1) %>%
+filter (mpaa> 8)
+print (movies_2000 $title)
 ```
 
 3. Create a subset of only Harry Potter movies with the title, rating, budget, and votes. Which movies are included in this data? Which is highest rated? Which has the most votes on imdb.com?
 
+
+
+
+
+
 ```{r}
+Harry_Potter <- movies %>%
+  
+filter(str_detect(title, "Harry potter")) %>%
+ select (title, rating, budget, votes)
+Harry_Potter %>% arrange(desc(rating))
+Harry_Potter %>% arrange(desc(votes))
 
 ```
 
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
-
+ movies101 <- movies %>%
+  filter (votes >= 100) %>%
+  filter(Animation == 1 | Comedy ==1) %>%
+ arrange(desc(budget)) 
+print (movies101$budget)
 ```
 
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
